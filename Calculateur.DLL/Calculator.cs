@@ -48,8 +48,41 @@ namespace Calculateur.DLL
 
         //Exos:
         //méthode qui en param un chaine et qui renvoie le nbre de char de la chaine
+
+        public static int nbChar(string chaine)
+        {
+            if (string.IsNullOrEmpty(chaine))
+            {
+                return 0;
+            }
+            return chaine.Length;
+        }
+
         //méthode qui en param un chaine et qui renvoie le nbre de mots de la chaine
-        //méthode qui en param un tableau et qui renvoie la somme des éléments du tableau
+
+        public static int nbMots(string chaine)
+        {
+            if (string.IsNullOrEmpty(chaine))
+            {
+                return 0;
+            }
+            return chaine.Trim().Replace("  ", " ").Split(' ').Length;
+        }
+        //méthode qui en param un tableau et qui renvoie la somme des éléments du tableau d'entiers
+
+        public static int SommeTab(int[] tab)
+        {
+            if (tab == null)
+            {
+                throw new ArgumentNullException("Tableau ne peut pas être nul....");
+            }
+            int somme = 0;
+            foreach (var item in tab)
+            {
+                somme += item;
+            }
+            return somme;
+        }
         
 
     }
