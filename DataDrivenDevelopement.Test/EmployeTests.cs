@@ -25,5 +25,20 @@ namespace DataDrivenDevelopement.Test
             Assert.IsNotNull(employe.Email);
 
         }
+
+        [TestMethod]
+        [TestCategory("Data Driven: CSV")]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", 
+                    "c:\\tmp\\Employes.csv",
+                     "Employes.csv", DataAccessMethod.Sequential)]
+        public void DataDriven_CSV_Test()
+        {
+            Employe employe = new Employe();
+            employe.Name = TestContext.DataRow["Name"].ToString();
+            employe.Email = TestContext.DataRow["Email"].ToString();
+
+            Assert.IsNotNull(employe.Name);
+            Assert.IsNotNull(employe.Email);
+        }
     }
 }
