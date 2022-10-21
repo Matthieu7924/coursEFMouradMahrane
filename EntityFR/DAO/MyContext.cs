@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace EntityFR.DAO
 {
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     public class MyContext : DbContext
     {
         

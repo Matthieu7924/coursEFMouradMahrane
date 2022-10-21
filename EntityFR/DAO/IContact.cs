@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityFR.DAO
 {
+   
     public interface IContact
     {
         List<Contact> GetAll();

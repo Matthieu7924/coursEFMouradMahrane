@@ -4,7 +4,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     internal sealed class Configuration : DbMigrationsConfiguration<EntityFR.DAO.MyContext>
     {
         public Configuration()

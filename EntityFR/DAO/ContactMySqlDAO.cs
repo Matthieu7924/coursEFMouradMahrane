@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityFR.DAO
 {
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     public class ContactMySqlDAO : IContact
     {
         private MySqlContext context = new MySqlContext();

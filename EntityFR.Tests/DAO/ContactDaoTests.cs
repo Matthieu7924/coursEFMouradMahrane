@@ -23,7 +23,7 @@ namespace EntityFR.Tests.DAO
 
         [TestMethod]
         [TestCategory("EntityFR")]
-        public void Insert_Contact_Test()
+        public void a_Insert_Contact_Test()
         {
             //Arrange:
             Contact c = new Contact { Id = 1, Name = "Test" };
@@ -42,7 +42,7 @@ namespace EntityFR.Tests.DAO
 
         [TestMethod]
         [TestCategory("EntityFR")]
-        public void GetById_Test()
+        public void c_GetById_Test()
         {
             //Arrange:
             int id = 1;
@@ -57,7 +57,7 @@ namespace EntityFR.Tests.DAO
         [TestMethod]
         [TestCategory("EntityFR")]
         [ExpectedException(typeof(Exception))]
-        public void GetById_IdNotExist_ReturnException()
+        public void d_GetById_IdNotExist_ReturnException()
         {
             //Arrange:
             int id = 1500;
@@ -69,7 +69,7 @@ namespace EntityFR.Tests.DAO
 
         [TestMethod]
         [TestCategory("EntityFR")]
-        public void Update_Contact_Test()
+        public void e_Update_Contact_Test()
         {
             //Arrange:
             int id = 1;
@@ -89,7 +89,7 @@ namespace EntityFR.Tests.DAO
         [TestMethod]
         [TestCategory("EntityFR")]
         [ExpectedException(typeof (Exception))]
-        public void Update_IdNotExist_ReturnException()
+        public void f_Update_IdNotExist_ReturnException()
         {
             //Arrange:
             int id = 1500;
@@ -98,45 +98,44 @@ namespace EntityFR.Tests.DAO
 
             //Act
             dao.Update(c);
-           
+
+        }
+
+        [TestMethod]
+        [TestCategory("EntityFR")]
+        public void b_GetAll_Test()
+        {
+            Assert.AreEqual(1, dao.GetAll().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("EntityFR")]
+        public void g_Delete_Contact_Test()
+        {
+            //Arrange:
+            int id = 1;
+            int tailleAvantSuppression = dao.GetAll().Count;
+            //Act
+            dao.Delete(id);
+
+            int tailleApresSuppression = dao.GetAll().Count;
+
+            //Assert
+            Assert.AreEqual(tailleApresSuppression, tailleAvantSuppression - 1);
 
 
         }
 
         [TestMethod]
         [TestCategory("EntityFR")]
-        public void GetAll_Test()
+        [ExpectedException (typeof (Exception))]
+        public void h_Delete_IdNotExist_ReturnException()
         {
             //Arrange:
-            Contact c = new Contact { Id = 1, Name = "Test" };
-            int tailleAvantInsertion = dao.GetAll().Count;
-
+            int id = 2500;
+            
             //Act
-            dao.Insert(c);
-            int tailleApresInsertion = dao.GetAll().Count;
-
-            //Assert
-            Assert.AreEqual(tailleApresInsertion, tailleAvantInsertion + 1);
-
-
-        }
-
-        [TestMethod]
-        [TestCategory("EntityFR")]
-        public void Delete_Contact_Test()
-        {
-            //Arrange:
-            Contact c = new Contact { Id = 1, Name = "Test" };
-            int tailleAvantInsertion = dao.GetAll().Count;
-
-            //Act
-            dao.Insert(c);
-            int tailleApresInsertion = dao.GetAll().Count;
-
-            //Assert
-            Assert.AreEqual(tailleApresInsertion, tailleAvantInsertion + 1);
-
-
+            dao.Delete(id);
         }
     }
 }

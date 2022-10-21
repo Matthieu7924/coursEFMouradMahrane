@@ -11,7 +11,7 @@ namespace EntityFR.DAO
         private MyContext context = new MyContext();
         public void Delete(int id)
         {
-             Contact c = context.Contacts.AsNoTracking().SingleOrDefault(ct => ct.Id == id);
+             Contact c = context.Contacts.Find(1);
             if (c != null)
             {
                 context.Contacts.Remove(c); 

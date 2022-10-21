@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace EntityFR.DAO
 {
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     public class MySqlContext : DbContext
     {
         // Votre contexte a été configuré pour utiliser une chaîne de connexion « MySqlContext » du fichier 

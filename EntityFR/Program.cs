@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityFR
 {
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     internal class Program
     {
         static void Main(string[] args)

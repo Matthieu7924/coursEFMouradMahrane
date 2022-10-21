@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,7 @@ namespace EntityFR.Services
 
         public List<Contact> GetAll()
         {
+              
             return dao.GetAll();
         }
         public Contact GetById(int id)
